@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server
+spec:
+  type: LoadBalancer
+  selector:
+    app: server
+  ports:
+    - name: serverport
+      protocol: TCP
+      port: 3333
+      targetPort: 3333
+    - name: rtmpport
+      protocol: TCP
+      port: 1935
+      targetPort: 1935
+    - name: streamport 
+      protocol: TCP
+      port: 8888
+      targetPort: 8888
