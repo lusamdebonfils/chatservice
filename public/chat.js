@@ -1,6 +1,6 @@
 //Make connection
 
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect('http://http://35.225.164.65:8080');
 
 //Query DOM
 // Query DOM
