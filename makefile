@@ -1,6 +1,6 @@
 
 
-containerID := $(shell docker ps -a -q --filter ancestor=timnuwa/server:latest)
+containerID := $(shell docker ps -a -q --filter ancestor=lusamdebonfils/server:latest)
 
 #===================  Node  ===========================
 
@@ -17,21 +17,21 @@ build:
 
 #===================  docker  ===========================
 docker-build: build
-	docker build -t timnuwa/server:latest .
+	docker build -t lusamdebonfils/server:latest .
 
 
 docker-run: docker-build
-	docker run -p 8080:8080 timnuwa/server:latest
+	docker run -p 8080:8080 lusamdebonfils/server:latest
 
 
 docker-login:
 	docker login
 
 docker-push: docker-login docker-build
-	docker push timnuwa/server:latest
+	docker push lusamdebonfils/server:latest
 
 docker-bash:
-	docker exec -ti timnuwa/server:latest /bin/sh
+	docker exec -ti lusamdebonfils/server:latest /bin/sh
 
 docker-containerID:
 	@echo running: $(containerID)
